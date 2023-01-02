@@ -1,0 +1,16 @@
+.todos-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: red;
+}
+
+.todos {
+  min-width: 33%;
+  height: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 2px solid blue;
+}

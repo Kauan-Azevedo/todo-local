@@ -1,1 +1,10 @@
-<p>todo works!</p>
+<section class="todoList-section">
+  <h1>Todo List</h1>
+  <div class="todos-container">
+    <div class="todos" *ngFor="let todo of todos">
+      <p>{{ todo.title }}</p>
+      <p>{{ todo.description }}</p>
+      <p>{{ todo.status }}</p>
+    </div>
+  </div>
+</section>
