@@ -1,16 +1,49 @@
+h1 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
 .todos-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  background-color: red;
 }
 
 .todos {
-  min-width: 33%;
-  height: 140px;
+  min-width: 22%;
+  min-height: 140px;
+  background-color: white;
+  padding: 0.5rem;
+  font-size: 15.5px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  border: 2px solid blue;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.complete {
+  color: green;
+  font-weight: bold;
+}
+.incomplete {
+  color: red;
+  font-weight: bold;
+}
+.in-progress {
+  color: orange;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .todos {
+    min-width: 100%;
+  }
 }

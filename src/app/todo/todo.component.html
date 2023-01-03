@@ -2,9 +2,15 @@
   <h1>Todo List</h1>
   <div class="todos-container">
     <div class="todos" *ngFor="let todo of todos">
-      <p>{{ todo.title }}</p>
+      <h3>{{ todo.title }}</h3>
       <p>{{ todo.description }}</p>
-      <p>{{ todo.status }}</p>
+      <p
+        [class.complete]="todo.status === 'complete'"
+        [class.incomplete]="todo.status === 'incomplete'"
+        [class.in-progress]="todo.status === 'in-progress'"
+      >
+        <strong>Status:</strong><br />{{ todo.status | uppercase }}
+      </p>
     </div>
   </div>
 </section>

@@ -12,24 +12,35 @@ export class TodoComponent {
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
+    for (let i = 0; i <= 10; i++) {
+      let todo: Todo = {
+        id: i,
+        title: `Todo ${i}`,
+        description: `Description ${i}`,
+        status: 'in-progress',
+      };
+      this.sendTodo(todo);
+    }
     this.getTodos();
   }
 
   getTodos() {
-    this.todoService.getTodos().subscribe((todos) => {
-      this.todos = todos;
-    });
+    // this.todoService.getTodos().subscribe((todos) => {
+    //   this.todos = todos;
+    // });
+    const lTodos = this.todoService.getTodos();
+    this.todos = lTodos;
   }
 
-  sendTodo() {
-    this.todoService.sendTodo();
+  sendTodo(todo: Todo) {
+    this.todoService.sendTodo(todo);
   }
 
   updateTodo() {
     this.todoService.updateTodo();
   }
 
-  deleteTodo() {
-    this.todoService.deleteTodo();
+  removeTodo() {
+    this.todoService.removeTodo();
   }
 }
