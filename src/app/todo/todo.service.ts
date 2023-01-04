@@ -24,33 +24,16 @@ export class TodoService {
   }
 
   public sendTodo(todo: Todo) {
-    const converTodo = JSON.stringify(todo);
     let tempTodo: Todo[] = [];
-    // let localTodo: any = localStorage.getItem('Todos') || [];
-
-    console.log('_CONVERT__TODO - Function Parameter');
-    console.log(JSON.parse(converTodo));
-
-    console.log('_LOCAL__TODO - Array Vazio');
-    // console.log(localTodo);
-
-    console.log('_TEMP__TODO - FROM LocalStorage');
-    console.log(tempTodo);
 
     if (this.todosLocalStorage != null) {
       tempTodo = this.todosLocalStorage;
 
       tempTodo.push(todo);
 
-      console.log('IF');
-      console.log(tempTodo);
-
       localStorage.setItem('Todos', JSON.stringify(tempTodo));
     } else {
       this.todosLocalStorage.push(todo);
-
-      console.log('ElSE');
-      console.log(this.todosLocalStorage);
 
       localStorage.setItem('Todos', JSON.stringify(tempTodo));
     }

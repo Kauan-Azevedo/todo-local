@@ -38,7 +38,7 @@ export class TodoComponent {
 
   updateTodo() {
     this.todoService.updateTodo();
-  }
+  }   
 
   removeTodo() {
     this.todoService.removeTodo();

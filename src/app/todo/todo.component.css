@@ -3,7 +3,29 @@ h1 {
   font-size: 30px;
   font-weight: bold;
   color: white;
-  text-align: center;
+}
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.7rem;
+}
+
+.add-todo {
+  min-width: 20%;
+  min-height: 35px;
+  background-color: white;
+  color: tomato;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 16.5px;
+  cursor: pointer;
+}
+
+.add-todo:hover {
+  background-color: rgb(240, 240, 240);
+  color: rgb(240, 95, 70);
 }
 
 .todos-container {
