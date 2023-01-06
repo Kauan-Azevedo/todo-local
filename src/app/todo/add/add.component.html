@@ -1,1 +1,32 @@
-<p>add works!</p>
+<section class="addTodo-section">
+  <div class="todo-header">
+    <h1>Adiconar TODO</h1>
+  </div>
+  <div class="todos-container">
+    <form #todo="ngForm" (ngSubmit)="onSubmit(todo.value)">
+      <input
+        type="text"
+        name="title"
+        placeholder="Titulo"
+        #formTitle="ngModel"
+        minlength="3"
+        ngModel
+        autocomplete="off"
+        required
+      />
+      <div *ngIf="formTitle.invalid && formTitle.touched" class="add-error">
+        Campo 'Titulo' inválido
+      </div>
+      <input
+        type="text"
+        name="description"
+        placeholder="Descrição"
+        #formDesc="ngModel"
+        ngModel
+        autocomplete="off"
+        required
+      />
+      <input type="submit" value="Criar" [disabled]="todo.invalid" />
+    </form>
+  </div>
+</section>

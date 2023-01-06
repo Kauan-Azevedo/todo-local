@@ -9,7 +9,7 @@ import * as CryptoJS from 'crypto-js';
 })
 export class TodoService {
   key: string = 'todoAplication';
-  todosLocalStorage: any = [];
+  todosLocalStorage: Todo[] = [];
 
   constructor() {}
 
@@ -33,15 +33,20 @@ export class TodoService {
 
       localStorage.setItem('Todos', JSON.stringify(tempTodo));
     } else {
+      // @ts-ignore
       this.todosLocalStorage.push(todo);
 
       localStorage.setItem('Todos', JSON.stringify(tempTodo));
     }
   }
 
-  public getTodos() {
-    let data = JSON.parse(localStorage.getItem('Todos') || '');
-    return data;
+  public getTodos(): [] | void {
+    // let data = JSON.parse(localStorage.getItem('Todos') || ''0);
+    // return data;
+    const data: any = localStorage.getItem('Todos');
+    if (data !== '' || data !== null) {
+      return data;
+    }
   }
 
   public removeTodo() {

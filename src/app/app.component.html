@@ -4,11 +4,7 @@
   </div>
   <nav>
     <ul>
-      <li>
-        <i class="fa-solid fa-house fa-xl"></i>
-        <span>Inicio</span>
-      </li>
-      <li>
+      <li routerLink="/todos" routerLinkActive="active">
         <i class="fa-solid fa-address-book fa-xl"></i>
         <span>Todos</span>
       </li>
@@ -24,6 +20,6 @@
   </nav>
 </header>
 <main (click)="closeNav()">
-  <app-todo></app-todo>
+  <router-outlet> </router-outlet>
 </main>
 <footer></footer>

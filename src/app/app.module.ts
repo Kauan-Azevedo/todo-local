@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { AddComponent } from './todo/add/add.component';
-
 @NgModule({
   declarations: [AppComponent, TodoComponent, AddComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [TodoComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
