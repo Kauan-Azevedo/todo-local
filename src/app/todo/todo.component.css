@@ -38,6 +38,7 @@ h1 {
 
 .todos {
   min-width: 22%;
+  max-width: 20rem;
   min-height: 140px;
   background-color: white;
   padding: 0.5rem;
@@ -49,6 +50,29 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+
+  position: relative;
+}
+
+.view-todo {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0.2rem 0.7rem;
+  background-color: green;
+  color: white;
+  border-radius: 999px;
+
+  cursor: pointer;
+  display: none;
+}
+
+.view-todo:hover {
+  background-color: rgb(0, 155, 0);
+}
+
+.todos:hover .view-todo {
+  display: inherit;
 }
 
 .complete {
