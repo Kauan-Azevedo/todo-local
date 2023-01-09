@@ -12,6 +12,8 @@ h1 {
 }
 
 .todos-container {
+  max-width: 650px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -62,4 +64,11 @@ form input[type="submit"]:disabled {
   color: rgb(240, 240, 240);
   background-color: rgba(128, 128, 128, 0.6);
   cursor: auto;
+}
+
+.add-error {
+  background-color: rgb(255 195 195);
+  color: #c81c1c;
+  font-weight: bold;
+  padding: 0.4rem;
 }

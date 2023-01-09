@@ -4,6 +4,7 @@
   </div>
   <div class="todos-container">
     <form #todo="ngForm" (ngSubmit)="onSubmit(todo.value)">
+      <label for="title"> Nome do todo: </label>
       <input
         type="text"
         name="title"
@@ -14,18 +15,26 @@
         autocomplete="off"
         required
       />
-      <div *ngIf="formTitle.invalid && formTitle.touched" class="add-error">
-        Campo 'Titulo' inválido
-      </div>
+      <label for="description">Descrição do todo:</label>
       <input
         type="text"
         name="description"
         placeholder="Descrição"
         #formDesc="ngModel"
+        minlength="3"
         ngModel
         autocomplete="off"
         required
       />
+      <div
+        *ngIf="
+          (formTitle.invalid && formTitle.touched) ||
+          (formDesc.invalid && formDesc.touched)
+        "
+        class="add-error"
+      >
+        Campos Invalidos!
+      </div>
       <input type="submit" value="Criar" [disabled]="todo.invalid" />
     </form>
   </div>
