@@ -1,0 +1,18 @@
+<section class="view-todo" *ngIf="todo">
+  <button (click)="goBack()">VOltar</button>
+  <div class="view-box">
+    <h1 class="todo-title">{{ todo.title }}</h1>
+    <p class="todo-group">
+      <span class="todo-title">Descrição:</span>
+      {{ todo.description }}
+    </p>
+    <p class="todo-group">
+      <span class="todo-title">Status:</span>
+      {{ todo.status }}
+    </p>
+    <p class="todo-group">
+      <span class="todo-title">Id:</span>
+      {{ todo.id }}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+p span {
+  font-weight: bold;
+  font-size: 16px;
+}
+.todo-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+}
+.view-box {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: white;
+  color: tomato;
+  padding: 0.7rem;
+  border-radius: 10px;
+}

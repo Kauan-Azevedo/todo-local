@@ -1,4 +1,5 @@
-<section class="todoList-section">
+<app-view [todo]="selectedTodo"></app-view>
+<section class="todoList-section" *ngIf="!selectedTodo">
   <div class="todo-header">
     <h1>Lista de Todos</h1>
     <button class="add-todo" routerLink="/add">+ Todo</button>

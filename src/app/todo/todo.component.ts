@@ -9,6 +9,7 @@ import { TodoService } from './todo.service';
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
+  selectedTodo?: Todo;
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
@@ -20,7 +21,7 @@ export class TodoComponent implements OnInit {
     this.todos = JSON.parse(listTodos);
   }
   viewTodo(todo: Todo) {
-    this.todoService.viewTodo(todo);
+    this.selectedTodo = this.todoService.viewTodo(todo);
   }
 
   sendTodo(todo: Todo) {
