@@ -12,6 +12,12 @@ header {
   gap: 1rem;
   transition: 500ms cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .header__logo {
   padding: 0.9rem 0rem;
 }
@@ -21,10 +27,6 @@ header {
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0);
   transition: 500ms cubic-bezier(0.6, -0.28, 0.74, 0.05);
-}
-
-.expand nav ul {
-  align-items: flex-start;
 }
 
 .expand nav ul li span {
