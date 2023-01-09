@@ -23,3 +23,24 @@ h1 {
   padding: 0.7rem;
   border-radius: 10px;
 }
+
+button {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 10px;
+  border-radius: 999px;
+  border: none;
+  background: white;
+  color: tomato;
+  font-weight: bold;
+  font-size: 23px;
+  box-shadow: 0 0 5px 0px #0000000f;
+}
+
+@media (max-width: 870px) {
+  button {
+    position: inherit;
+    margin: 0.5rem 0;
+  }
+}

@@ -1,5 +1,7 @@
 <section class="view-todo" *ngIf="todo">
-  <button (click)="goBack()">VOltar</button>
+  <button (click)="goBack()">
+    <i class="fa-solid fa-arrow-left-long"></i>
+  </button>
   <div class="view-box">
     <h1 class="todo-title">{{ todo.title }}</h1>
     <p class="todo-group">
