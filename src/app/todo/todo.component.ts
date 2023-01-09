@@ -19,6 +19,9 @@ export class TodoComponent implements OnInit {
     const listTodos: any = this.todoService.getTodos();
     this.todos = JSON.parse(listTodos);
   }
+  viewTodo(todo: Todo) {
+    this.todoService.viewTodo(todo);
+  }
 
   sendTodo(todo: Todo) {
     this.todoService.sendTodo(todo);

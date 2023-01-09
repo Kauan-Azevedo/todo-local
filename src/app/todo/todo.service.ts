@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TODOS } from '../mock/todos.mock-list';
 import { Todo } from '../interfaces/todo.interface';
-import { Observable, of } from 'rxjs';
 import * as CryptoJS from 'crypto-js';
 
 @Injectable({
@@ -40,12 +38,22 @@ export class TodoService {
     }
   }
 
-  public getTodos(): [] | void {
+  public getTodos() {
     // let data = JSON.parse(localStorage.getItem('Todos') || ''0);
     // return data;
     const data: any = localStorage.getItem('Todos');
     if (data !== '' || data !== null) {
       return data;
+    }
+  }
+
+  public viewTodo(todo: Todo) {
+    let todos = JSON.parse(this.getTodos());
+
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].id === todo.id) {
+        return todos[i];
+      }
     }
   }
 

@@ -5,7 +5,7 @@
   </div>
   <div class="todos-container">
     <div class="todos" *ngFor="let todo of todos">
-      <span class="view-todo">View</span>
+      <span class="view-todo" (click)="viewTodo(todo)">View</span>
       <h3>{{ todo.title }}</h3>
       <p>{{ todo.description }}</p>
       <p
