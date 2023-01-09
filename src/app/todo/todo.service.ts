@@ -24,11 +24,14 @@ export class TodoService {
   public sendTodo(todo: Todo) {
     let tempTodo: Todo[] = [];
 
+    console.log(todo);
     this.todosLocalStorage =
       this.getTodos() !== null ? JSON.parse(this.getTodos()) : [];
 
     if (this.todosLocalStorage !== null || this.todosLocalStorage !== '') {
       tempTodo = this.todosLocalStorage;
+
+      tempTodo.push(todo);
 
       localStorage.setItem('Todos', JSON.stringify(tempTodo));
     } else {
