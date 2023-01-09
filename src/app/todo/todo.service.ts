@@ -40,8 +40,6 @@ export class TodoService {
   }
 
   public getTodos() {
-    // let data = JSON.parse(localStorage.getItem('Todos') || ''0);
-    // return data;
     const data: any = localStorage.getItem('Todos');
     if (data !== '' || data !== null) {
       return data;
