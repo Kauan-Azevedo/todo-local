@@ -10,6 +10,8 @@ import { TodoService } from './todo.service';
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   selectedTodo?: Todo;
+  changingStatus: boolean = false;
+  selectedStatus?: string;
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
@@ -22,6 +24,14 @@ export class TodoComponent implements OnInit {
   }
   viewTodo(todo: Todo) {
     this.selectedTodo = this.todoService.viewTodo(todo);
+  }
+
+  changeStatus() {
+    this.changingStatus = true;
+  }
+
+  confirmStatusChange() {
+    console.log(status);
   }
 
   sendTodo(todo: Todo) {

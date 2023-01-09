@@ -75,6 +75,29 @@ h1 {
   display: inherit;
 }
 
+.status-select {
+  width: 80%;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+}
+
+.confirm-btn {
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  width: 90%;
+  padding: 0.5rem 0.2rem;
+
+  transition: 500ms ease;
+}
+.confirm-btn:hover {
+  width: 100%;
+  cursor: pointer;
+}
+
 .complete {
   color: green;
   font-weight: bold;
