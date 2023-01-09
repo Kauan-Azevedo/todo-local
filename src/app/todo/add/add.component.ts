@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Todo } from '../../interfaces/todo.interface';
-import { TodoComponent } from '../todo.component';
-import { TodoService } from '../todo.service';
+// import { TodoService } from '../todo.service';
+import { AddService } from './add.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -10,7 +10,8 @@ import { TodoService } from '../todo.service';
 })
 export class AddComponent {
   constructor(
-    private readonly todoService: TodoService,
+    // private readonly todoService: TodoService,
+    private readonly addService: AddService,
     private readonly route: Router
   ) {}
 
@@ -18,7 +19,7 @@ export class AddComponent {
     todo['status'] = 'incomplete';
     todo['id'] = Math.floor(Math.random() * 99999) + 1;
 
-    this.todoService.sendTodo(todo);
+    this.addService.sendTodo(todo);
     this.route.navigate(['todos']);
   }
 }
