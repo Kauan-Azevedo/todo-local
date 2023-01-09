@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Todo } from '../../interfaces/todo.interface';
-// import { TodoService } from '../todo.service';
 import { AddService } from './add.service';
 @Component({
   selector: 'app-add',
@@ -10,7 +9,6 @@ import { AddService } from './add.service';
 })
 export class AddComponent {
   constructor(
-    // private readonly todoService: TodoService,
     private readonly addService: AddService,
     private readonly route: Router
   ) {}
