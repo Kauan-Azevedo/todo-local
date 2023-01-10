@@ -34,10 +34,6 @@ export class TodoComponent implements OnInit {
     console.log(status);
   }
 
-  sendTodo(todo: Todo) {
-    this.todoService.sendTodo(todo);
-  }
-
   updateTodo() {
     this.todoService.updateTodo();
   }

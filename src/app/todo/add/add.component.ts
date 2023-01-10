@@ -20,4 +20,8 @@ export class AddComponent {
     this.addService.sendTodo(todo);
     this.route.navigate(['todos']);
   }
+
+  sendTodo(todo: Todo) {
+    this.addService.sendTodo(todo);
+  }
 }
