@@ -9,32 +9,13 @@
       <span class="view-todo" (click)="viewTodo(todo)">View</span>
       <h3>{{ todo.title }}</h3>
       <p>{{ todo.description }}</p>
-
-      <div class="status-changer" (click)="changeStatus()">
-        <p
-          [class.complete]="todo.status === 'complete'"
-          [class.incomplete]="todo.status === 'incomplete'"
-          [class.in-progress]="todo.status === 'in-progress'"
-          *ngIf="!changingStatus"
-        >
-          <strong>Status:</strong><br />{{ todo.status | uppercase }}
-        </p>
-        <select
-          name="status"
-          id="status"
-          class="status-select"
-          [class.complete]="todo.status === 'complete'"
-          [class.incomplete]="todo.status === 'incomplete'"
-          [class.in-progress]="todo.status === 'in-progress'"
-          *ngIf="changingStatus"
-          [(ngModel)]="selectedStatus"
-        >
-          <option value="complete">Completo</option>
-          <option value="incomplete" default>Incompleto</option>
-          <option value="in-progress">Em progresso</option>
-        </select>
-        <button *ngIf="changingStatus" class="confirm-btn">Confirmar</button>
-      </div>
+      <p
+        [class.complete]="todo.status === 'complete'"
+        [class.incomplete]="todo.status === 'incomplete'"
+        [class.in-progress]="todo.status === 'in-progress'"
+      >
+        <strong>Status:</strong><br />{{ todo.status | uppercase }}
+      </p>
     </div>
   </div>
 </section>

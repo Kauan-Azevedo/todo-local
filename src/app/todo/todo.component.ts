@@ -26,14 +26,6 @@ export class TodoComponent implements OnInit {
     this.selectedTodo = this.todoService.viewTodo(todo);
   }
 
-  changeStatus() {
-    this.changingStatus = true;
-  }
-
-  confirmStatusChange() {
-    console.log(status);
-  }
-
   updateTodo() {
     this.todoService.updateTodo();
   }
