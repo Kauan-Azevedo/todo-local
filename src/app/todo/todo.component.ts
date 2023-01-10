@@ -10,6 +10,8 @@ import { TodoService } from './todo.service';
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   selectedTodo?: Todo;
+  changingStatus: boolean = false;
+  selectedStatus?: string;
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
@@ -24,15 +26,11 @@ export class TodoComponent implements OnInit {
     this.selectedTodo = this.todoService.viewTodo(todo);
   }
 
-  sendTodo(todo: Todo) {
-    this.todoService.sendTodo(todo);
-  }
-
   updateTodo() {
     this.todoService.updateTodo();
   }
 
-  removeTodo() {
-    this.todoService.removeTodo();
+  removeTodos() {
+    this.todoService.removeTodos();
   }
 }

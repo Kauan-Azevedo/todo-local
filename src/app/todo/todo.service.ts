@@ -7,7 +7,6 @@ import * as CryptoJS from 'crypto-js';
 })
 export class TodoService {
   key: string = 'todoAplication';
-  todosLocalStorage: Todo[] = [];
 
   constructor() {}
 
@@ -19,27 +18,6 @@ export class TodoService {
     return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(
       CryptoJS.enc.Utf8
     );
-  }
-
-  public sendTodo(todo: Todo) {
-    let tempTodo: Todo[] = [];
-
-    console.log(todo);
-    this.todosLocalStorage =
-      this.getTodos() !== null ? JSON.parse(this.getTodos()) : [];
-
-    if (this.todosLocalStorage !== null || this.todosLocalStorage !== '') {
-      tempTodo = this.todosLocalStorage;
-
-      tempTodo.push(todo);
-
-      localStorage.setItem('Todos', JSON.stringify(tempTodo));
-    } else {
-      // @ts-ignore
-      this.todosLocalStorage.push(todo);
-
-      localStorage.setItem('Todos', JSON.stringify(tempTodo));
-    }
   }
 
   public getTodos() {
@@ -59,8 +37,9 @@ export class TodoService {
     }
   }
 
-  public removeTodo() {
-    localStorage.removeItem('Todo');
+  public removeTodos() {
+    localStorage.removeItem('Todos');
+    window.location.reload();
   }
 
   public updateTodo() {
