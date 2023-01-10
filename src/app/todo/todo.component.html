@@ -3,6 +3,7 @@
   <div class="todo-header">
     <h1>Lista de Todos</h1>
     <button class="add-todo" routerLink="/add">+ Todo</button>
+    <button class="add-todo" (click)="removeTodos()">Remover Todos</button>
   </div>
   <div class="todos-container">
     <div class="todos" *ngFor="let todo of todos">
