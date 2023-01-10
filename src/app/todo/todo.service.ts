@@ -37,8 +37,9 @@ export class TodoService {
     }
   }
 
-  public removeTodo() {
-    localStorage.removeItem('Todo');
+  public removeTodos() {
+    localStorage.removeItem('Todos');
+    window.location.reload();
   }
 
   public updateTodo() {

@@ -30,7 +30,7 @@ export class TodoComponent implements OnInit {
     this.todoService.updateTodo();
   }
 
-  removeTodo() {
-    this.todoService.removeTodo();
+  removeTodos() {
+    this.todoService.removeTodos();
   }
 }
